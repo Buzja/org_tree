@@ -1,30 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import OrgChart  from 'react-orgchart';
 import 'react-orgchart/index.css';
 const initechOrg = {
   name: "Bill Lumbergh",
-  actor: "Gary Cole",
+  position: "CEO",
   children: [
     {
       name: "Peter Gibbons",
-      actor: "Ron Livingston",
+      position: "Manager",
       children: [
         {
-          name: "And More!!",
-          actor: "This is just to show how to build a complex tree with multiple levels of children. Enjoy!"
+          name: "Andy Horsell",
+          position: "Engineer",
+          children:[
+            {
+              name: "Mark Bulak",
+              position: "some position"
+            },
+            {
+              name: "Tom Hikom",
+              position: "the same position"
+            }
+          ]
         }
       ]
     },
     {
       name: "Milton Waddams",
-      actor: "Stephen Root"
+      position: "Manager"
     },
     {
       name: "Bob Slydell",
-      actor: "John C. McGi..."
+      position: "Manager"
     },
+    {
+      name: "John Newman",
+      position: "Manager"
+    }
   ]
 };
 
@@ -32,18 +45,17 @@ class App extends Component {
   render() {
     const MyNodeComponent = ({node}) => {
       return (
-        <div className="initechNode" onClick={() => alert("Hi my real name is: " + node.actor)}>{ node.name }</div>
+        <div className="node_wrapper" >
+         <div className="node_data"> 
+           <h1>{ node.name }</h1>
+           <h2>{node.position}</h2>
+         </div>
+         <button className="node_btn" onClick={() => alert(`info: name ${node.name} position ${node.position}`)}>info</button>
+        </div>
       );
     };
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <OrgChart tree={initechOrg} NodeComponent={MyNodeComponent} />
       </div>
     );

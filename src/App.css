@@ -1,28 +1,45 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+body,html{
+  font-family: 'Raleway', sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h1, h2{
+  margin: 5px 0;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.node_wrapper{
+  display: inline-block;
   padding: 20px;
-  color: white;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  color: #2d2d2d;
 }
 
-.App-title {
-  font-size: 1.5em;
+.node_data h1{
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.App-intro {
-  font-size: large;
+.node_data h2{
+  font-size: .75rem;
+  font-weight: 400;
+  color: #bbbbbb;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.node_btn{
+  display: inline-block;
+  padding: 5px 15px;
+  border: none;
+  background-color: #ffe25f;
+  box-shadow: inset 1px 3px 5px rgba(0,0,0,.2);
+  color: #2d2d2d;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 400px;
+  cursor: pointer;
+}
+
+.reactOrgChart .orgNodeChildGroup .nodeGroupCell{
+  padding: 0 10px;
 }
